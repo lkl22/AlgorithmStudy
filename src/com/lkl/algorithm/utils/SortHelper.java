@@ -2,6 +2,7 @@ package com.lkl.algorithm.utils;
 
 import com.lkl.algorithm.constant.Const;
 import com.lkl.algorithm.sort.InsertSort;
+import com.lkl.algorithm.sort.SelectionSort;
 
 public class SortHelper {
     private SortHelper() {
@@ -24,6 +25,8 @@ public class SortHelper {
         long startTime = System.nanoTime();
         if (Const.SORT_NAME_INSERT.equals(sortName)) {
             InsertSort.sort(array);
+        } else if (Const.SORT_NAME_SELECTION.equals(sortName)) {
+            SelectionSort.sort(array);
         }
         LogUtils.printf("Sort time: %fs\n", (System.nanoTime() - startTime) / 1000000000.0);
         SortHelper.verifyArrayOrder(array);
